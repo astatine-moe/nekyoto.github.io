@@ -1,0 +1,301 @@
+@font-face {
+    font-family: "Overwatch";
+    src: url("../font/big_noodle_titling.ttf");
+}
+@font-face {
+    font-family: 'Overwatch2';
+    src: url("../font/big_noodle_titling_oblique.ttf");
+}
+.ow {
+    font-family: 'Overwatch';
+}
+.ow-oblique {
+    font-family: 'Overwatch2';
+}
+
+
+/* main */
+html {    
+    display:none;
+}
+html, body {
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(../img/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Overwatch2';
+}
+
+
+/* nav */
+nav, .sidenav {
+    background:  black;
+}
+.nav-wrapper .brand-logo {
+    color: #fa9c1d;
+}
+.nav-items {
+    font-family: 'Overwatch';
+}
+.active {
+    color: #fa9c1d;
+}
+.sidenav li > .active > i, .sidenav li > .active > [class^="mdi-"], .sidenav li > .active li > .active > [class*="mdi-"], .sidenav li > .active > i.material-icons {
+    color:#fa9a1dc9;
+}
+.sidenav li > a > i, .sidenav li > a > [class^="mdi-"], .sidenav li > a li > a > [class*="mdi-"], .sidenav li > a > i.material-icons {
+    color:rgba(255, 255, 255, 0.733);
+}
+.sidenav li > a {
+    color:white;
+}
+.sidenav li > .active {
+    color:#f5a803;
+}
+nav ul a {
+    font-size: 25px;
+    transition: all 500ms;
+}
+nav ul a:hover {
+    background-color:rgba(0, 0, 0, 0);    
+    color:#fa9c1d;
+}
+
+/* header */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/banner.jpg");
+    background-position: 10% 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding:50px;
+    border-bottom: 5px solid black;
+    font-family: 'Overwatch2';
+    color:white;
+    text-align:center;
+}
+
+
+/* main content */
+.news {
+    width: 100%;
+    text-align: center;
+}
+.news .item {
+    margin-left: 20px;
+    width: 20%;
+    display:inline-block;
+    height:170px;
+    position: relative;
+    background-position: center;
+    outline: solid 2px #fa9c1d;
+    transition: all 0.5s ease;
+}
+.news .item:first-child {
+    margin-left:0;
+}
+.news .item:hover {
+    transform: scale(1.15);
+    z-index: 100;
+    outline-width: 4px;
+}
+.news .item .item-text {
+    color:white;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    background:rgba(0, 0, 0, 0.7);
+}
+.news .item .item-text p {
+    text-align:center;
+    margin:0;
+    padding:5px;
+}
+
+/* heroes */
+.heroes {
+    display:flex;
+    flex-flow:wrap;
+    justify-content: center;
+    -webkit-box-pack: center;
+    text-align: center;
+    padding: 0 21% 0 21%;
+}
+.heroes .hero {
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: cetner;
+    align-items: center;
+    margin: 2.4px 3px;
+}
+.heroes .hero .image-wrapper-hero {
+    display:inline-block;
+    position:relative;
+    width: 76px;
+    height: 86px;
+    border: 3px solid #f6f6f6;
+    background-color:rgba(51, 51, 51, .9);
+    background-clip: padding-box;
+    overflow:hidden;
+    border-radius:7px;
+    transform:skew(25rad);
+    transition: all 0.3s;
+}
+.heroes .hero .image-wrapper-hero .image-hero {
+    display:block;
+    width: calc(100% + 10px);
+    height:100%;
+    background-size: auto 100%;
+    background-position: 50% 50%;
+    position: relative;
+    transform:skew(-25rad) translateX(-5px);
+
+}
+.heroes.hero:hover {
+    z-index:100;
+}
+.heroes .hero .image-wrapper-hero:hover {    
+    transform: skew(25rad) scale(1.3);
+    background-color:#fa9c1d;
+    
+}
+.heroes .hero:hover .title-hero {    
+    background-color:#f6f6f6;
+}
+.heroes br {
+    display: block;
+    line-height: 0.1;
+    content: " ";
+    margin-top: -0.8em;
+}
+.heroes .hero .title-hero {
+    transition: all 0.3s;
+    white-space: normal;
+    word-break: keep-all;
+    font-family: Roboto,Helvetica Neue,Arial,sans-serif;
+    position: relative;
+    display:inline-block;
+    font-style:normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #212529;
+    padding: .25em .5em;
+    margin-left: -17%;
+    border-radius:.3em;
+    font-size:12px;
+}
+.hero-info {
+    margin-left:15%;
+    margin-right:15%;
+    font-size:20px;
+}
+.currentHero {
+    display:none;
+}
+.vertical-align-middle { 
+    vertical-align: middle; 
+}
+
+.padding-bottom-3 {
+    padding-bottom: 3px;
+}
+.stats {
+    margin-top:30px;
+    margin-left:20%;
+    margin-right:20%;
+}
+.stats .info {
+    margin-left:110px;
+    margin-top:10px;
+    font-size:15px;
+    text-align: center;
+}
+.stats .info .item {
+    display:inline-block;
+    margin-right:23%;
+}
+.stats .info .item:last-child {
+    margin-right:0;
+}
+.stats .top-bar {
+    background:#9e6aa8;
+    width:100%;
+    height:60px;
+    padding:10px;
+    padding-left:110px;
+    position: relative;
+    line-height:35px;
+}
+.main-stat {
+    margin-bottom:100px;
+}
+.main-stat:last-child {
+    margin-bottom:50px;
+}
+.stats .top-bar span {
+    color:white;
+    font-family: 'Overwatch';
+    font-style:italic;
+    font-size:35px;
+    vertical-align: middle;
+}
+.stats .top-bar .stat {
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+.stats .top-bar .stat-hero {
+    display:inline-block;
+    position:relative;
+    width: 76px;
+    height: 92px;
+    border: 2px solid #f6f6f6;
+    background-color:rgba(51, 51, 51, .9);
+    background-clip: padding-box;
+    overflow:hidden;
+    border-radius:7px;
+    transform:skew(25rad);
+    transition: all 0.3s;
+}
+.stats .top-bar .stat-hero .stat-hero-image {
+    width: calc(100% + 10px);
+    height:100%;    
+    background-size: auto 100%;
+    background-position: 50% 50%;
+    position: relative;
+    transform:skew(-25rad) translateX(-5px);
+    display:block;
+
+}
+
+/* footer */
+.page-footer {
+    background-color:black;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+.abilities {
+    text-align: center;
+    display:inline-block;
+}
+object {
+    text-align:center;
+    height:100px;
+    width:100px;
+}
+.glow {
+    font-weight:bold;
+    color:rgb(124, 201, 193);
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg">
+    <head>
+        <link rel="icon" type="image/x-icon" href="https://static.playoverwatch.com/img/favicon-696bc07714.ico">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8">
+
+        <title>Overwatch | Heroes</title>
+    </head>
+    <body>
+        <!-- navbar -->
+        <nav>
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="#!" class="brand-logo ow">Overwatch</a>
+                    <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down nav-items">
+                        <li><a href="index.html"><i class="material-icons left">home</i> Home</a></li>
+                        <li><a href="heroes.html"  class="active"><i class="material-icons left">view_list</i> Heroes</a></li>
+                        <li><a href="maps.html"><i class="material-icons left">terrain</i> Maps</a></li>
+                        <li><a href="statistics.html"><i class="material-icons left">timeline</i> Statistics</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile">
+            <li><a href="index.html"><i class="material-icons left">home</i> Home</a></li>
+            <li><a href="heroes.html" class="active"><i class="material-icons left">view_list</i> Heroes</a></li>
+            <li><a href="maps.html"><i class="material-icons left">terrain</i> Maps</a></li>
+            <li><a href="statistics.html"><i class="material-icons left">timeline</i> Statistics</a></li>
+        </ul>
+
+        <header>
+            <h1>HEROES</h1>
+        </header>
+
+        <main>
+            <br>
+            <div class="heroes" id="heroes">
+
+            </div>
+            <hr>
+            <div class="currentHero">
+                <h1 class="center-align" id="hero-name">Unknown</h1>
+                <h5 class="center-align" id="hero-role">Unknown</h5>
+                <hr><br>
+                <div class="hero-info">
+                    <h1>Information: </h1>
+                    <h4 id="realname">Real name: </h4>
+                    <h4 id="phrase">Catch Phrase: </h4>
+                    <h1>Abilities</h1>
+                    <div class="abilities" style="text-align:center;">
+
+                    </div>
+                    <h1>Story</h1>
+                    <p>Unknown</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <h5 class="white-text">Overwatch</h5>
+                    <p class="grey-text text-lighten-4">Overwatch is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    &copy; Blizzard Entertainment
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="js/materialize.min.js"></script>
+        <script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+        <script src="js/heroes.js"></script>
+    </body>
+</html>
