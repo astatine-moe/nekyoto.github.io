@@ -50,11 +50,15 @@
             var dimensions = 30;
             for(var x = 0; x < dimensions; x++) {
                 for(var i = 0; i < 20; i++) {
+                    let elevate = false;
+                    if(Math.random() < 0.5) {
+                        elevate = true;
+                    }
                     var box = new BABYLON.Mesh.CreateBox("crate", 1, scene);
                     box.material = new BABYLON.StandardMaterial("Mat", scene);                
                     box.material.diffuseTexture = new BABYLON.Texture("grass.jpg", scene);
                     box.material.diffuseTexture.hasAlpha = false;
-                    box.position = new BABYLON.Vector3(5 + i, -9, x);
+                    box.position = new BABYLON.Vector3(5 + i, elevate ? -8 : -9, x);
                     box.checkCollisions = true;
                 }
             }
