@@ -48,7 +48,7 @@
 
             //Ground
             var ground = BABYLON.Mesh.CreatePlane("ground", 20.0, scene);
-            ground.material = new BABYLON.StandardMaterial("groundMat", scene);
+            ground.material = new BABYLON.Texture("grass.jpg", scene);
             ground.material.diffuseColor = new BABYLON.Color3(1, 1, 1);
             ground.material.backFaceCulling = false;
             ground.position = new BABYLON.Vector3(5, -10, -15);
@@ -56,7 +56,7 @@
 
             //Simple crate
             for(var i = 0; i < 100; i++) {
-                var box = new BABYLON.Mesh.CreateBox("crate", 2, scene);
+                var box = new BABYLON.Mesh.CreateBox("crate", 1, scene);
                 box.material = new BABYLON.StandardMaterial("Mat", scene);                
                 box.material.diffuseTexture = new BABYLON.Texture("texture.jpg", scene);
                 box.material.diffuseTexture.hasAlpha = false;
