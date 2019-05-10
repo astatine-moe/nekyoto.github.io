@@ -43,24 +43,20 @@
             var light1 = new BABYLON.PointLight("Omni", new BABYLON.Vector3(2, -5, -2), scene);
 
             // Need a free camera for collisions
-            var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, -8, -20), scene);
+            var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(10, -7, 10), scene);
             camera.attachControl(canvas, true);
 
             //Ground
-            var ground = BABYLON.Mesh.CreatePlane("ground", 20.0, scene);
-            ground.material = new BABYLON.StandardMaterial("Mat", scene);                
-            ground.material.diffuseTexture = new BABYLON.Texture("grass.jpg", scene);
-            ground.material.diffuseTexture.hasAlpha = false;
-            ground.position = new BABYLON.Vector3(5, -10, -15);
-            ground.rotation = new BABYLON.Vector3(Math.PI / 2, 0, 0);
-
-            //Simple crate
-            for(var i = 0; i < 100; i++) {
-                var box = new BABYLON.Mesh.CreateBox("crate", 1, scene);
-                box.material = new BABYLON.StandardMaterial("Mat", scene);                
-                box.material.diffuseTexture = new BABYLON.Texture("texture.jpg", scene);
-                box.material.diffuseTexture.hasAlpha = false;
-                box.position = new BABYLON.Vector3(5 + (i * 3), -9, -10);
+            var dimensions = 30;
+            for(var x = 0; x < dimensions; x++) {
+                for(var i = 0; i < 20; i++) {
+                    var box = new BABYLON.Mesh.CreateBox("crate", 1, scene);
+                    box.material = new BABYLON.StandardMaterial("Mat", scene);                
+                    box.material.diffuseTexture = new BABYLON.Texture("grass.jpg", scene);
+                    box.material.diffuseTexture.hasAlpha = false;
+                    box.position = new BABYLON.Vector3(5 + i, -9, x);
+                    box.checkCollisions = true;
+                }
             }
 
             //Set gravity for the scene (G force like, on Y-axis)
@@ -77,8 +73,7 @@
             camera.ellipsoid = new BABYLON.Vector3(1, 1, 1);
 
             //finally, say which mesh will be collisionable
-            ground.checkCollisions = true;
-            box.checkCollisions = true;
+            
 
             return scene;
         }
