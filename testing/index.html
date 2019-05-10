@@ -48,9 +48,9 @@
 
             //Ground
             var ground = BABYLON.Mesh.CreatePlane("ground", 20.0, scene);
-            ground.material = new BABYLON.Texture("grass.jpg", scene);
-            ground.material.diffuseColor = new BABYLON.Color3(1, 1, 1);
-            ground.material.backFaceCulling = false;
+            ground.material = new BABYLON.StandardMaterial("Mat", scene);                
+            ground.material.diffuseTexture = new BABYLON.Texture("texture.jpg", scene);
+            ground.material.diffuseTexture.hasAlpha = false;
             ground.position = new BABYLON.Vector3(5, -10, -15);
             ground.rotation = new BABYLON.Vector3(Math.PI / 2, 0, 0);
 
