@@ -62,34 +62,33 @@
             var light1 = new BABYLON.PointLight("Omni", new BABYLON.Vector3(2, -5, -2), scene);
 
             // Need a free camera for collisions
-            var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(10, -7, 0), scene);
+            var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(20, 200, 0), scene);
             camera.attachControl(canvas, true);
 
             //Ground
-            var dimensions = 10;
+            var dimensions = 50;
 
             var chunk = 0;
             var iteration = 0;
             function test() {
                 chunk = chunk + 9;
                 iteration++;
-                if(iteration > 50) return;
+                if(iteration > 100) return;
                 generateChunk(scene, chunk);
                 setTimeout(() => {
                     test();
-                }, 2000);
+                }, 250);
             }
 
             test();
             //Set gravity for the scene (G force like, on Y-axis)
-            scene.gravity = new BABYLON.Vector3(0, -0.1, 0);
 
             // Enable Collisions
             scene.collisionsEnabled = true;
 
             //Then apply collisions and gravity to the active camera
             camera.checkCollisions = true;
-            camera.applyGravity = true;
+            camera.applyGravity = false;
 
             //Set the ellipsoid around the camera (e.g. your player's size)
             camera.ellipsoid = new BABYLON.Vector3(1, 1, 1);
