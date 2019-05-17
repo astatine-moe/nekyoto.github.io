@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/x-icon" href="https://static.playoverwatch.com/img/favicon-696bc07714.ico">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8">
+
+        <title>Overwatch | Contact</title>
+    </head>
+    <body>
+        <!-- navbar -->
+        <nav>
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="#!" class="brand-logo ow">Overwatch</a>
+                    <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down nav-items">
+                        <li><a href="index.html"><i class="material-icons left">home</i> Home</a></li>
+                        <li><a href="heroes.html"><i class="material-icons left">view_list</i> Heroes</a></li>
+                        <li><a href="maps.html"><i class="material-icons left">terrain</i> Maps</a></li>
+                        <li><a href="statistics.html"><i class="material-icons left">timeline</i> Statistics</a></li>
+                        <li><a href="contact.html" class="active"><i class="material-icons left">mail</i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile">
+            <li><a href="index.html"><i class="material-icons left">home</i> Home</a></li>
+            <li><a href="heroes.html"><i class="material-icons left">view_list</i> Heroes</a></li>
+            <li><a href="maps.html"><i class="material-icons left">terrain</i> Maps</a></li>
+            <li><a href="statistics.html"><i class="material-icons left">timeline</i> Statistics</a></li>
+            <li><a href="contact.html" class="active"><i class="material-icons left">mail</i> Contact</a></li>
+        </ul>
+
+        <header>
+            <h1>CONTACT</h1>
+        </header>
+
+        <main>
+            <div class="container"><br><br>
+                <div class="row" style="color:black;">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input placeholder="First name" type="text" class="validate" id="firstname">
+                                <label for="firstname">Firstname</label>
+
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">email</i>
+                                <input placeholder="E-Mail" type="text" class="validate" id="email">
+                                <label for="email">E-Mail</label>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea id="textarea2" class="materialize-textarea" data-length="300"></textarea>
+                                <label for="textarea2">Message</label>
+                            </div>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="yes">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                    
+                        <div class="progress" style="display:none;">
+                            <div class="indeterminate"></div>
+                        </div>
+                        <div class="hidden" style="display:none;">
+                            <h1 class="center-align"><i class="material-icons" style="font-size:4.2rem;color:#3c9c01;">check</i>  Message sent</h1>
+                        </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <h5 class="white-text">Overwatch</h5>
+                    <p class="grey-text text-lighten-4">Overwatch is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    &copy; Blizzard Entertainment
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="js/materialize.min.js"></script>
+        <script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+        <script>
+            $('form').submit(function(e) {
+                e.preventDefault();
+                $('form').fadeOut(function() {                    
+                    $('.progress').fadeIn(1000, function() {
+                        setTimeout(function() {
+                            $('.progress').fadeOut(function() {
+                                $('.hidden').fadeIn();
+                               
+                            });
+                        }, 1500);
+                    });
+                });
+            })
+        </script>
+    </body>
+</html>

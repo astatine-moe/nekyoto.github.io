@@ -23,6 +23,7 @@
                         <li><a href="heroes.html"><i class="material-icons left">view_list</i> Heroes</a></li>
                         <li><a href="maps.html"><i class="material-icons left">terrain</i> Maps</a></li>
                         <li><a href="statistics.html"><i class="material-icons left">timeline</i> Statistics</a></li>
+                        <li><a href="contact.html"><i class="material-icons left">mail</i> Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,6 +33,7 @@
             <li><a href="heroes.html"><i class="material-icons left">view_list</i> Heroes</a></li>
             <li><a href="maps.html"><i class="material-icons left">terrain</i> Maps</a></li>
             <li><a href="statistics.html"><i class="material-icons left">timeline</i> Statistics</a></li>
+            <li><a href="contact.html"><i class="material-icons left">mail</i> Contact</a></li>
         </ul>
 
         <header>
@@ -58,6 +60,10 @@
                 </div>
             </div>
         </main>
+        
+        <div class="toaster">
+            <h3>You were eliminated by <span style='color:#FF2525;'>a gnome</span></h3>
+        </div>
 
         <footer class="page-footer">
             <div class="container">
@@ -80,5 +86,15 @@
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			  crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
+        <!-- <script>
+            $('.item').hover(function() {                                   
+                $('.toaster').animate({bottom: '200px', opacity: 1}, 100, function() {});
+                    setTimeout(() => {
+                        $('.toaster').animate({bottom: '100px', opacity:0}, 100, function() {
+                            
+                        });                        
+                    }, 3000);
+            });
+        </script> -->
     </body>
 </html>

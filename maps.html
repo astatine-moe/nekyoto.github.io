@@ -23,6 +23,7 @@
                         <li><a href="heroes.html"><i class="material-icons left">view_list</i> Heroes</a></li>
                         <li><a href="maps.html" class="active"><i class="material-icons left">terrain</i> Maps</a></li>
                         <li><a href="statistics.html"><i class="material-icons left">timeline</i> Statistics</a></li>
+                        <li><a href="contact.html"><i class="material-icons left">mail</i> Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,6 +33,7 @@
             <li><a href="heroes.html"><i class="material-icons left">view_list</i> Heroes</a></li>
             <li><a href="maps.html"  class="active"><i class="material-icons left">terrain</i> Maps</a></li>
             <li><a href="statistics.html"><i class="material-icons left">timeline</i> Statistics</a></li>
+            <li><a href="contact.html"><i class="material-icons left">mail</i> Contact</a></li>
         </ul>
 
         <header>
@@ -39,7 +41,9 @@
         </header>
 
         <main>
-            
+            <div class="maps">
+
+            </div>
         </main>
 
         <footer class="page-footer">
@@ -63,5 +67,24 @@
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			  crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
+        <script>
+            function jsUcfirst(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+             document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.tooltipped');
+                var instances = M.Tooltip.init(elems, {margin:-250});
+            });
+            $(document).ready(function() {
+                const maps = ["chateau-guillard", "dorado", "eichenwalde", "hanamura", "horizon-lunar-colony", "ilios", "kings-row", "lijiang-tower", "nepal", "numbani", "oasis", "route-66", "temple-of-anubis", "volskaya-industries", "watchpoint-gibraltar"];
+                for(let i = 0; i < maps.length; i++) {
+                    $('.maps').append("<div id='"+maps[i]+"' class='map tooltipped' data-tooltip='" + jsUcfirst(maps[i].split('-').map(itm => `${jsUcfirst(itm)}`).join(' ')) +"'><img src='img/maps/"+maps[i]+"-1.jpg'></div>");
+                }
+                $('.map').each(function(index, elem) {
+                    $(this).delay(50 * index);
+                    $(this).animate({opacity:1}, 500);
+                });
+            });
+        </script>
     </body>
 </html>
